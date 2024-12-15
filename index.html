@@ -1,0 +1,57 @@
+0<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopyala</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text" id="textToCopy">uDbfUeko36</div>
+        <button onclick="copyText()">Kopyala</button>
+    </div>
+
+    <script>
+        function copyText() {
+            const textToCopy = document.getElementById("textToCopy").textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("Yazı kopyalandı: " + textToCopy);
+            }).catch(err => {
+                alert("Kopyalama başarısız oldu: " + err);
+            });
+        }
+    </script>
+</body>
+</html>
